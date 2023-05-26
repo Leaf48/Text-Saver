@@ -1,13 +1,22 @@
 {
     "name": "Text Saver",
     "version": "1.0",
-    "permissions": ["activeTab", "storage", "commands"],
+    "permissions": ["activeTab", "storage", "commands", "scripting"],
     "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+      "service_worker": "background.js",
+      "type": "module"
     },
-    "browser_action": {
+    "action": {
+      "default_icon": "icons/icon16.png",
+      "default_title": "Saved Texts",
       "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     },
     "commands": {
       "save-text": {
@@ -17,6 +26,6 @@
         "description": "Save selected text"
       }
     },
-    "manifest_version": 2
+    "manifest_version": 3
   }
   
